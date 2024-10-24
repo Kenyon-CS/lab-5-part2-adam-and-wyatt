@@ -50,6 +50,31 @@ int main()                                      //Line 4
     list2.print();                              //Line 27
     cout << endl;                               //Line 28
 
+
+
+cout << "Testing Merge Function: " << endl;
+orderedLinkedList<int> newlist;
+newlist.mergeLists(list1,list2);
+newlist.print();
+
+cout << "Testing Merge Function again... Creating a list with (1 3 7) and then merging: " << endl;
+
+orderedLinkedList<int> newerlist;
+orderedLinkedList<int> list3;
+list3.insert(1);
+list3.insert(3);
+list3.insert(7);
+newerlist.mergeLists(newlist,list3);
+newerlist.print();
+
+cout << "Finally, we're testing the old discarded lists. Are they empty? (list1, list2, newlist, list3). They should be empty...:" << endl;
+
+cout << list1.isEmptyList() << list2.isEmptyList() << newlist.isEmptyList() <<  list3.isEmptyList() << endl;
+
+cout << "^ Should output all 1s (true) if lists are empty" << endl;
+
+
+
     return 0;					                //Line 29
 }                                               //Line 30
 

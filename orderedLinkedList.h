@@ -47,6 +47,8 @@ public:
       //    of the new list, and count is decremented by 1. If
       //    deleteItem is not in the list, an appropriate message
       //    is printed.
+
+    void mergeLists(orderedLinkedList<Type>& list1, orderedLinkedList<Type>& list2);
 };
 
 template <class Type>
@@ -190,6 +192,38 @@ void orderedLinkedList<Type>::deleteNode(const Type& deleteItem)
                      << "list." << endl;
     }
 }//end deleteNode
+
+
+
+
+
+template<class Type>
+void orderedLinkedList<Type>::mergeLists(orderedLinkedList<Type> &list1, orderedLinkedList<Type> &list2){
+
+
+//set first to point to first
+
+first = list1.first;
+count = list1.count;
+list1.first = NULL;
+
+nodeType<Type> *temp;
+int value;
+
+while(list2.first != NULL){
+
+    insert(list2.first->info);
+
+    temp = list2.first;  //set temp to the current node
+    list2.first = list2.first->link; //advance first to the next node
+    delete temp;   //deallocate the memory occupied by temp
+
+}
+
+
+}
+
+
 
 
 #endif
